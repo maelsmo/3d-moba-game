@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bcokwpcgyir4f"]
+[gd_scene load_steps=32 format=3 uid="uid://bcokwpcgyir4f"]
 
 [ext_resource type="PackedScene" uid="uid://bpyvjyfjdo35u" path="res://stages/stage-assets/field.glb" id="1_nbgfg"]
 [ext_resource type="Texture2D" uid="uid://bokw5dduvwxs8" path="res://stages/stage-assets/bridge2.png" id="2_hykn4"]
@@ -17,6 +17,8 @@
 [ext_resource type="Texture2D" uid="uid://dg5w7c5o6y0dj" path="res://stages/stage-assets/rock.png" id="15_pf5ql"]
 [ext_resource type="Texture2D" uid="uid://bw6ofkuek6emb" path="res://stages/stage-assets/sign.png" id="16_opjij"]
 [ext_resource type="ArrayMesh" uid="uid://cy41p42lc5eg6" path="res://stages/stage-assets/sign.obj" id="17_kwmqw"]
+[ext_resource type="PackedScene" uid="uid://c2af7ju1ov671" path="res://characters/character1/character1.tscn" id="18_1kpgc"]
+[ext_resource type="Shader" uid="uid://de6lerf7sulxj" path="res://stages/stage1/stage1.tres" id="19_xl4tj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u06ah"]
 albedo_texture = ExtResource("2_hykn4")
@@ -34,6 +36,7 @@ albedo_texture = ExtResource("6_lvni2")
 albedo_texture = ExtResource("8_m6qah")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rdcek"]
+cull_mode = 1
 albedo_texture = ExtResource("9_umkjq")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dcjy2"]
@@ -47,6 +50,12 @@ albedo_texture = ExtResource("15_pf5ql")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qiuye"]
 albedo_texture = ExtResource("16_opjij")
+
+[sub_resource type="QuadMesh" id="QuadMesh_cpima"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m748q"]
+render_priority = 0
+shader = ExtResource("19_xl4tj")
 
 [node name="stage1" type="Node3D"]
 
@@ -587,3 +596,10 @@ transform = Transform3D(-1.32647e-07, 0, -3.0346, 0, 3.0346, 0, 3.0346, 0, -1.32
 material_override = SubResource("StandardMaterial3D_qiuye")
 mesh = ExtResource("17_kwmqw")
 skeleton = NodePath("../..")
+
+[node name="character1" parent="." instance=ExtResource("18_1kpgc")]
+
+[node name="river" type="MeshInstance3D" parent="."]
+transform = Transform3D(17.4504, 0, 0, 0, -9.33108e-06, 1, 0, -213.47, -4.37114e-08, -26.0861, 0.1, 0)
+mesh = SubResource("QuadMesh_cpima")
+surface_material_override/0 = SubResource("ShaderMaterial_m748q")
