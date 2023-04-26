@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bcokwpcgyir4f"]
+[gd_scene load_steps=38 format=3 uid="uid://bcokwpcgyir4f"]
 
 [ext_resource type="PackedScene" uid="uid://bpyvjyfjdo35u" path="res://stages/stage-assets/field.glb" id="1_nbgfg"]
 [ext_resource type="Texture2D" uid="uid://bokw5dduvwxs8" path="res://stages/stage-assets/bridge2.png" id="2_hykn4"]
@@ -14,11 +14,13 @@
 [ext_resource type="ArrayMesh" uid="uid://c2fcns1oybe76" path="res://stages/stage-assets/well.obj" id="12_l7pbe"]
 [ext_resource type="Texture2D" uid="uid://cocxmkhp764h3" path="res://stages/stage-assets/rock2.png" id="13_8tbob"]
 [ext_resource type="ArrayMesh" uid="uid://cpsb5fkus7nv2" path="res://stages/stage-assets/rock.obj" id="14_04eb3"]
+[ext_resource type="Texture2D" uid="uid://bfpptppe66wor" path="res://stages/stage-assets/sky_1.jpg" id="15_ltt2c"]
 [ext_resource type="Texture2D" uid="uid://dg5w7c5o6y0dj" path="res://stages/stage-assets/rock.png" id="15_pf5ql"]
 [ext_resource type="Texture2D" uid="uid://bw6ofkuek6emb" path="res://stages/stage-assets/sign.png" id="16_opjij"]
 [ext_resource type="ArrayMesh" uid="uid://cy41p42lc5eg6" path="res://stages/stage-assets/sign.obj" id="17_kwmqw"]
 [ext_resource type="PackedScene" uid="uid://c2af7ju1ov671" path="res://characters/character1/character1.tscn" id="18_1kpgc"]
 [ext_resource type="Shader" uid="uid://de6lerf7sulxj" path="res://stages/stage1/stage1.tres" id="19_xl4tj"]
+[ext_resource type="Texture2D" uid="uid://c67go3rf703wi" path="res://stages/stage-assets/sky_2.jpg" id="21_jb01p"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u06ah"]
 albedo_texture = ExtResource("2_hykn4")
@@ -45,6 +47,9 @@ albedo_texture = ExtResource("11_reiso")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tsawp"]
 albedo_texture = ExtResource("13_8tbob")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dvapx"]
+albedo_texture = ExtResource("15_ltt2c")
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fmbqb"]
 albedo_texture = ExtResource("15_pf5ql")
 
@@ -56,6 +61,28 @@ albedo_texture = ExtResource("16_opjij")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m748q"]
 render_priority = 0
 shader = ExtResource("19_xl4tj")
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_gxpvl"]
+panorama = ExtResource("21_jb01p")
+
+[sub_resource type="Sky" id="Sky_vxlrh"]
+sky_material = SubResource("PanoramaSkyMaterial_gxpvl")
+
+[sub_resource type="Environment" id="Environment_xyfgm"]
+background_mode = 2
+sky = SubResource("Sky_vxlrh")
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+sdfgi_bounce_feedback = 1.52
+sdfgi_energy = 1.5
+glow_enabled = true
+glow_bloom = 0.05
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.01
+volumetric_fog_albedo = Color(0.647059, 0.45098, 0.905882, 1)
+volumetric_fog_emission_energy = 0.0
 
 [node name="stage1" type="Node3D"]
 
@@ -365,7 +392,7 @@ skeleton = NodePath("../..")
 
 [node name="Rock42" type="MeshInstance3D" parent="assets"]
 transform = Transform3D(-13.6898, 0, 0.793617, 0, 21.7362, 0, -0.62069, 0, -17.5039, 103.843, -3.63207, 24.2454)
-material_override = SubResource("StandardMaterial3D_tsawp")
+material_override = SubResource("StandardMaterial3D_dvapx")
 mesh = ExtResource("14_04eb3")
 skeleton = NodePath("../..")
 
@@ -603,3 +630,12 @@ skeleton = NodePath("../..")
 transform = Transform3D(17.4504, 0, 0, 0, -9.33108e-06, 1, 0, -213.47, -4.37114e-08, -26.0861, 0.1, 0)
 mesh = SubResource("QuadMesh_cpima")
 surface_material_override/0 = SubResource("ShaderMaterial_m748q")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_xyfgm")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.727088, 0.477787, -0.493014, -0.664603, -0.309735, 0.679976, 0.17218, 0.822061, 0.542743, 0, 76.1995, 0)
+light_energy = 0.8
+shadow_enabled = true
+directional_shadow_max_distance = 400.0
