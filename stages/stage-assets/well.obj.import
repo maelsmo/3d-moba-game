@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c2fcns1oybe76"
+path="res://.godot/imported/well.obj-ed0bdf077c4a465e6a2c23d01b7eca61.mesh"
+
+[deps]
+
+files=["res://.godot/imported/well.obj-ed0bdf077c4a465e6a2c23d01b7eca61.mesh"]
+
+source_file="res://stages/stage-assets/well.obj"
+dest_files=["res://.godot/imported/well.obj-ed0bdf077c4a465e6a2c23d01b7eca61.mesh", "res://.godot/imported/well.obj-ed0bdf077c4a465e6a2c23d01b7eca61.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

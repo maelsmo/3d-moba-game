@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://41wwn3t414r5"
+path="res://.godot/imported/conifer.obj-d8395c053f63f8c2a7d7ade9be9dabe8.mesh"
+
+[deps]
+
+files=["res://.godot/imported/conifer.obj-d8395c053f63f8c2a7d7ade9be9dabe8.mesh"]
+
+source_file="res://stages/stage-assets/conifer.obj"
+dest_files=["res://.godot/imported/conifer.obj-d8395c053f63f8c2a7d7ade9be9dabe8.mesh", "res://.godot/imported/conifer.obj-d8395c053f63f8c2a7d7ade9be9dabe8.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
