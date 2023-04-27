@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dm2vb0tofcv2w"
 path.s3tc="res://.godot/imported/conifer.png-9482fc44503605d176e5fabcc85701ea.s3tc.ctex"
+path.etc2="res://.godot/imported/conifer.png-9482fc44503605d176e5fabcc85701ea.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://stages/stage-assets/conifer.png"
-dest_files=["res://.godot/imported/conifer.png-9482fc44503605d176e5fabcc85701ea.s3tc.ctex"]
+dest_files=["res://.godot/imported/conifer.png-9482fc44503605d176e5fabcc85701ea.s3tc.ctex", "res://.godot/imported/conifer.png-9482fc44503605d176e5fabcc85701ea.etc2.ctex"]
 
 [params]
 

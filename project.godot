@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="3d-moba-game"
-run/main_scene="res://stages/stage1/stage1.tscn"
+config/name="3d_moba_game"
+run/main_scene="res://ui/uiControls.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -26,3 +26,7 @@ window/handheld/orientation=4
 [input_devices]
 
 pointing/emulate_touch_from_mouse=true
+
+[rendering]
+
+textures/vram_compression/import_etc2_astc=true

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://darjbrtp2roem"
 path.s3tc="res://.godot/imported/well2.png-0f103d8197c21554e5ee95b3ff5f4d03.s3tc.ctex"
+path.etc2="res://.godot/imported/well2.png-0f103d8197c21554e5ee95b3ff5f4d03.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://stages/stage-assets/well2.png"
-dest_files=["res://.godot/imported/well2.png-0f103d8197c21554e5ee95b3ff5f4d03.s3tc.ctex"]
+dest_files=["res://.godot/imported/well2.png-0f103d8197c21554e5ee95b3ff5f4d03.s3tc.ctex", "res://.godot/imported/well2.png-0f103d8197c21554e5ee95b3ff5f4d03.etc2.ctex"]
 
 [params]
 

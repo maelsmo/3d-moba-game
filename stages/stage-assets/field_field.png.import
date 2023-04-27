@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cvwg4upvppysg"
 path.s3tc="res://.godot/imported/field_field.png-81e8b28e542bec727769e5711664b2e5.s3tc.ctex"
+path.etc2="res://.godot/imported/field_field.png-81e8b28e542bec727769e5711664b2e5.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={}
@@ -13,7 +14,7 @@ generator_parameters={}
 [deps]
 
 source_file="res://stages/stage-assets/field_field.png"
-dest_files=["res://.godot/imported/field_field.png-81e8b28e542bec727769e5711664b2e5.s3tc.ctex"]
+dest_files=["res://.godot/imported/field_field.png-81e8b28e542bec727769e5711664b2e5.s3tc.ctex", "res://.godot/imported/field_field.png-81e8b28e542bec727769e5711664b2e5.etc2.ctex"]
 
 [params]
 

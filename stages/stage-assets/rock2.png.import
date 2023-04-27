@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cocxmkhp764h3"
 path.s3tc="res://.godot/imported/rock2.png-ae667217b461e11e537c6826188d0a23.s3tc.ctex"
+path.etc2="res://.godot/imported/rock2.png-ae667217b461e11e537c6826188d0a23.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://stages/stage-assets/rock2.png"
-dest_files=["res://.godot/imported/rock2.png-ae667217b461e11e537c6826188d0a23.s3tc.ctex"]
+dest_files=["res://.godot/imported/rock2.png-ae667217b461e11e537c6826188d0a23.s3tc.ctex", "res://.godot/imported/rock2.png-ae667217b461e11e537c6826188d0a23.etc2.ctex"]
 
 [params]
 

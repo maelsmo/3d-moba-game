@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bokw5dduvwxs8"
 path.s3tc="res://.godot/imported/bridge2.png-d21dc6a6fd67a62585a7214c811d105b.s3tc.ctex"
+path.etc2="res://.godot/imported/bridge2.png-d21dc6a6fd67a62585a7214c811d105b.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://stages/stage-assets/bridge2.png"
-dest_files=["res://.godot/imported/bridge2.png-d21dc6a6fd67a62585a7214c811d105b.s3tc.ctex"]
+dest_files=["res://.godot/imported/bridge2.png-d21dc6a6fd67a62585a7214c811d105b.s3tc.ctex", "res://.godot/imported/bridge2.png-d21dc6a6fd67a62585a7214c811d105b.etc2.ctex"]
 
 [params]
 
