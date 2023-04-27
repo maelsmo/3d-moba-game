@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://briu0pl1fljwc"]
+
+[ext_resource type="PackedScene" uid="uid://bcokwpcgyir4f" path="res://stages/stage1/stage1.tscn" id="1_55yyy"]
+[ext_resource type="PackedScene" uid="uid://rnr7kv5l1y6j" path="res://ui/uiControls.tscn" id="3_78vxq"]
+[ext_resource type="PackedScene" uid="uid://hj4ywfi7lbib" path="res://characters/character1/character1cotroller.tscn" id="3_auk1w"]
+[ext_resource type="Script" path="res://ui/uiControls.gd" id="4_6gve1"]
+
+[node name="GameScene" type="Node3D"]
+
+[node name="stage1" parent="." instance=ExtResource("1_55yyy")]
+
+[node name="character1Cotroller" parent="." instance=ExtResource("3_auk1w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.332, 0, 1.29166)
+
+[node name="Controls" parent="." instance=ExtResource("3_78vxq")]
+script = ExtResource("4_6gve1")
+
+[editable path="character1Cotroller"]
+[editable path="Controls"]

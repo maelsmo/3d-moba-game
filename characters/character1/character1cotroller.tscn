@@ -13,3 +13,12 @@ height = 6.53604
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.11241, 0)
 shape = SubResource("CapsuleShape3D_5041a")
+
+[node name="camguideY" type="Node3D" parent="."]
+
+[node name="camguideX" type="Node3D" parent="camguideY"]
+
+[node name="Camera3D" type="Camera3D" parent="camguideY/camguideX"]
+transform = Transform3D(-1, 8.88179e-16, -8.74228e-08, -1.462e-08, 0.985917, 0.167233, 8.61916e-08, 0.167233, -0.985917, 0, 7, -10)
+fov = 65.0
+far = 1000.0

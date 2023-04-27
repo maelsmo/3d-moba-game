@@ -44,6 +44,7 @@ scale = Vector2(0.5, 0.5)
 texture_normal = ExtResource("1_da2k0")
 texture_pressed = ExtResource("1_da2k0")
 shape = SubResource("CircleShape2D_eg20v")
+action = "joystick_action"
 
 [node name="inner" type="Sprite2D" parent="Control/bg"]
 texture = ExtResource("2_yna3o")
@@ -69,6 +70,7 @@ scale = Vector2(0.229404, 0.229404)
 texture_normal = ExtResource("3_ptdkc")
 texture_pressed = ExtResource("4_fbl8n")
 shape = SubResource("CircleShape2D_qrjy8")
+action = "attack_action"
 
 [node name="Control3" type="Control" parent="."]
 layout_mode = 3
@@ -89,6 +91,7 @@ scale = Vector2(0.15, 0.15)
 texture_normal = ExtResource("5_b8omy")
 texture_pressed = ExtResource("6_abho5")
 shape = SubResource("CircleShape2D_qdwjm")
+action = "s2_action"
 
 [node name="Control4" type="Control" parent="."]
 layout_mode = 3
@@ -109,6 +112,7 @@ scale = Vector2(0.15, 0.15)
 texture_normal = ExtResource("7_qcexn")
 texture_pressed = ExtResource("8_tuqmt")
 shape = SubResource("CircleShape2D_kdqfv")
+action = "s1_action"
 
 [node name="Control5" type="Control" parent="."]
 layout_mode = 3
@@ -129,3 +133,4 @@ scale = Vector2(0.15, 0.15)
 texture_normal = ExtResource("9_m1lh7")
 texture_pressed = ExtResource("10_6x2rj")
 shape = SubResource("CircleShape2D_1ustf")
+action = "dodge_action"
