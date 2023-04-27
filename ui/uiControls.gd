@@ -55,8 +55,9 @@ func _process(delta):
 	rotationVelocityX = lerpf(rotationVelocityX, cameraInput.x * 0.4, delta*10)
 	rotationVelocityY = lerpf(rotationVelocityY, cameraInput.y * 0.15, delta*10)
 	camguideX.rotate_x(deg_to_rad(rotationVelocityY))
-	camguideX.rotate_y(deg_to_rad(rotationVelocityX))
+	camguideY.rotate_y(deg_to_rad(rotationVelocityX))
 	camguideX.rotation.x = clamp(camguideX.rotation.x, -0.5, 0.5)
 	cameraInput = Vector2.ZERO
+	
 
 	
