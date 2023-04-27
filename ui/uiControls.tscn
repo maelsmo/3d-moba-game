@@ -1,0 +1,131 @@
+[gd_scene load_steps=16 format=3 uid="uid://rnr7kv5l1y6j"]
+
+[ext_resource type="Texture2D" uid="uid://d4kp8yee2tmbp" path="res://ui/assets/Joystick_BG.png" id="1_da2k0"]
+[ext_resource type="Texture2D" uid="uid://b12yqnb8lgfpn" path="res://ui/assets/joystick_button.png" id="2_yna3o"]
+[ext_resource type="Texture2D" uid="uid://dpj0xwrgfqf77" path="res://ui/assets/Attack_Unpressed.png" id="3_ptdkc"]
+[ext_resource type="Texture2D" uid="uid://d1rm5q37a5qlk" path="res://ui/assets/Attack_Pressed.png" id="4_fbl8n"]
+[ext_resource type="Texture2D" uid="uid://c24jhtb3kiaih" path="res://ui/assets/S2_Unpressed.png" id="5_b8omy"]
+[ext_resource type="Texture2D" uid="uid://bdjscvptfjclh" path="res://ui/assets/S2_Pressed.png" id="6_abho5"]
+[ext_resource type="Texture2D" uid="uid://cgtcejikaux5y" path="res://ui/assets/S1_Unpressed.png" id="7_qcexn"]
+[ext_resource type="Texture2D" uid="uid://b0kpobdgvdojv" path="res://ui/assets/S1_Pressed.png" id="8_tuqmt"]
+[ext_resource type="Texture2D" uid="uid://dppqgo08kilyp" path="res://ui/assets/Dodge_Unpressed.png" id="9_m1lh7"]
+[ext_resource type="Texture2D" uid="uid://wlkdgaoigwi5" path="res://ui/assets/Dodge_Pressed.png" id="10_6x2rj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eg20v"]
+radius = 196.18
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qrjy8"]
+radius = 340.05
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qdwjm"]
+radius = 340.05
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kdqfv"]
+radius = 340.05
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1ustf"]
+radius = 340.05
+
+[node name="Controls" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 53.0
+offset_top = -250.0
+offset_right = 93.0
+offset_bottom = -210.0
+grow_vertical = 0
+
+[node name="bg" type="TouchScreenButton" parent="Control"]
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("1_da2k0")
+texture_pressed = ExtResource("1_da2k0")
+shape = SubResource("CircleShape2D_eg20v")
+
+[node name="inner" type="Sprite2D" parent="Control/bg"]
+texture = ExtResource("2_yna3o")
+offset = Vector2(194.5, 194.5)
+
+[node name="Control2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -145.0
+offset_top = -158.0
+offset_right = -105.0
+offset_bottom = -118.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="attackBtn" type="TouchScreenButton" parent="Control2"]
+position = Vector2(-70, -70)
+scale = Vector2(0.229404, 0.229404)
+texture_normal = ExtResource("3_ptdkc")
+texture_pressed = ExtResource("4_fbl8n")
+shape = SubResource("CircleShape2D_qrjy8")
+
+[node name="Control3" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -184.0
+offset_top = -368.0
+offset_right = -144.0
+offset_bottom = -328.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Control3"]
+scale = Vector2(0.15, 0.15)
+texture_normal = ExtResource("5_b8omy")
+texture_pressed = ExtResource("6_abho5")
+shape = SubResource("CircleShape2D_qdwjm")
+
+[node name="Control4" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -302.0
+offset_top = -320.0
+offset_right = -302.0
+offset_bottom = -320.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Control4"]
+scale = Vector2(0.15, 0.15)
+texture_normal = ExtResource("7_qcexn")
+texture_pressed = ExtResource("8_tuqmt")
+shape = SubResource("CircleShape2D_kdqfv")
+
+[node name="Control5" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -356.0
+offset_top = -196.0
+offset_right = -316.0
+offset_bottom = -156.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Control5"]
+scale = Vector2(0.15, 0.15)
+texture_normal = ExtResource("9_m1lh7")
+texture_pressed = ExtResource("10_6x2rj")
+shape = SubResource("CircleShape2D_1ustf")
