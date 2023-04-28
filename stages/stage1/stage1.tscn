@@ -1,6 +1,6 @@
-[gd_scene load_steps=44 format=3 uid="uid://bcokwpcgyir4f"]
+[gd_scene load_steps=47 format=3 uid="uid://bcokwpcgyir4f"]
 
-[ext_resource type="PackedScene" uid="uid://bpyvjyfjdo35u" path="res://stages/stage-assets/field.glb" id="1_nbgfg"]
+[ext_resource type="Texture2D" uid="uid://cvwg4upvppysg" path="res://stages/stage-assets/field_field.png" id="1_81f7x"]
 [ext_resource type="Texture2D" uid="uid://bokw5dduvwxs8" path="res://stages/stage-assets/bridge2.png" id="2_hykn4"]
 [ext_resource type="ArrayMesh" uid="uid://byftkfatayqbj" path="res://stages/stage-assets/bridge.obj" id="2_xiadf"]
 [ext_resource type="Texture2D" uid="uid://c4yeni2gn3ebj" path="res://stages/stage-assets/house.png" id="4_mewb4"]
@@ -20,6 +20,43 @@
 [ext_resource type="ArrayMesh" uid="uid://cy41p42lc5eg6" path="res://stages/stage-assets/sign.obj" id="17_kwmqw"]
 [ext_resource type="Shader" uid="uid://de6lerf7sulxj" path="res://stages/stage1/stage1.tres" id="19_xl4tj"]
 [ext_resource type="Texture2D" uid="uid://c67go3rf703wi" path="res://stages/stage-assets/sky_2.jpg" id="21_jb01p"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_twv0c"]
+resource_name = "Material.001"
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_81f7x")
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_e3f48"]
+_surfaces = [{
+"aabb": AABB(-100, 0, -100, 200, 1e-05, 200),
+"format": 4097,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 3, 0),
+"name": "Material.001",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 200, 194, 0, 0, 0, 0, 0, 0, 200, 66, 0, 0, 200, 66, 0, 0, 0, 0, 0, 0, 200, 66, 0, 0, 200, 194, 0, 0, 0, 0, 0, 0, 200, 194, 0, 0, 200, 66, 0, 0, 0, 0, 0, 0, 200, 194)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_02tji"]
+resource_name = "field_Plane"
+_surfaces = [{
+"aabb": AABB(-100, 0, -100, 200, 1e-05, 200),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 3, 0),
+"material": SubResource("StandardMaterial3D_twv0c"),
+"name": "Material.001",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 200, 194, 0, 0, 0, 0, 0, 0, 200, 66, 255, 127, 255, 255, 255, 255, 255, 191, 0, 0, 200, 66, 0, 0, 0, 0, 0, 0, 200, 66, 255, 127, 255, 255, 255, 255, 255, 191, 0, 0, 200, 194, 0, 0, 0, 0, 0, 0, 200, 194, 255, 127, 255, 255, 255, 255, 255, 191, 0, 0, 200, 66, 0, 0, 0, 0, 0, 0, 200, 194, 255, 127, 255, 255, 255, 255, 255, 191)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_e3f48")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u06ah"]
 albedo_texture = ExtResource("2_hykn4")
@@ -108,7 +145,11 @@ data = PackedVector3Array(2.3446, 1.1306, 1.4433, 2.361, 2.1628, 1.6287, 2.3867,
 
 [node name="assets" type="Node3D" parent="."]
 
-[node name="field" parent="assets" instance=ExtResource("1_nbgfg")]
+[node name="field" type="Node3D" parent="assets"]
+
+[node name="field2" type="MeshInstance3D" parent="assets/field"]
+mesh = SubResource("ArrayMesh_02tji")
+skeleton = NodePath("")
 
 [node name="Bridge" type="MeshInstance3D" parent="assets"]
 transform = Transform3D(-1.40053e-07, 0, 3.20405, 0, 2.7939, 0, -3.20405, 0, -1.40053e-07, -26.0817, 0.165086, 23.6269)
