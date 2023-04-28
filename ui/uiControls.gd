@@ -11,10 +11,18 @@ var cameraIndex = -1
 var cameraInput = Vector2.ZERO
 var rotationVelocityX = 0.0
 var rotationVelocityY = 0.0
+var joystickCenter
+var joystickVector 
+var joystickVectorNormalized
+
+@onready var joystickHandle = $Control/bg/inner
+
 
 func _ready():
 	camguideY = get_parent().get_node("character1Cotroller/camguideY")
 	camguideX = get_parent().get_node("character1Cotroller/camguideY/camguideX")
+	joystickCenter = joystickHandle.global_position
+	
 	
 func _unhandled_input(event):
 	if event is InputEventScreenTouch:
@@ -34,6 +42,7 @@ func _unhandled_input(event):
 		else:
 			if Input.is_action_just_released("joystick_action"):
 				joystickIndex = -1
+				joystickHandle.global_position = joystickCenter
 			elif Input.is_action_just_released("attack_action"):
 				attackIndex = -1
 			elif Input.is_action_just_released("s1_action"):
@@ -47,11 +56,15 @@ func _unhandled_input(event):
 				
 	if event is InputEventScreenDrag:
 		if event.index == joystickIndex:
-			pass
+			joystickVector = event.position - joystickCenter
+			joystickVectorNormalized = joystickVector.normalized()
+			joystickHandle.global_position = joystickCenter + joystickVector.limit_length(80)
 		if event.index == cameraIndex:
 			cameraInput = event.relative
 
 func _process(delta):
+	$Label.text = str(Engine.get_frames_per_second())
+	
 	rotationVelocityX = lerpf(rotationVelocityX, cameraInput.x * 0.4, delta*10)
 	rotationVelocityY = lerpf(rotationVelocityY, cameraInput.y * 0.15, delta*10)
 	camguideX.rotate_x(deg_to_rad(rotationVelocityY))

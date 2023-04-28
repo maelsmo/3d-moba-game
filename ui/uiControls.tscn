@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://rnr7kv5l1y6j"]
+[gd_scene load_steps=17 format=3 uid="uid://rnr7kv5l1y6j"]
 
 [ext_resource type="Texture2D" uid="uid://d4kp8yee2tmbp" path="res://ui/assets/Joystick_BG.png" id="1_da2k0"]
 [ext_resource type="Texture2D" uid="uid://b12yqnb8lgfpn" path="res://ui/assets/joystick_button.png" id="2_yna3o"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://b0kpobdgvdojv" path="res://ui/assets/S1_Pressed.png" id="8_tuqmt"]
 [ext_resource type="Texture2D" uid="uid://dppqgo08kilyp" path="res://ui/assets/Dodge_Unpressed.png" id="9_m1lh7"]
 [ext_resource type="Texture2D" uid="uid://wlkdgaoigwi5" path="res://ui/assets/Dodge_Pressed.png" id="10_6x2rj"]
+[ext_resource type="FontFile" uid="uid://oaoodkgomyl" path="res://fonts/Roboto-Medium.ttf" id="11_vtmpd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_eg20v"]
 radius = 196.18
@@ -47,8 +48,8 @@ shape = SubResource("CircleShape2D_eg20v")
 action = "joystick_action"
 
 [node name="inner" type="Sprite2D" parent="Control/bg"]
+position = Vector2(192, 192)
 texture = ExtResource("2_yna3o")
-offset = Vector2(194.5, 194.5)
 
 [node name="Control2" type="Control" parent="."]
 layout_mode = 3
@@ -134,3 +135,17 @@ texture_normal = ExtResource("9_m1lh7")
 texture_pressed = ExtResource("10_6x2rj")
 shape = SubResource("CircleShape2D_1ustf")
 action = "dodge_action"
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -42.0
+offset_top = 10.0
+offset_right = 42.0
+offset_bottom = 49.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("11_vtmpd")
+theme_override_font_sizes/font_size = 30
+text = "60 fps"
+horizontal_alignment = 1
