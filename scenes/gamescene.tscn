@@ -15,5 +15,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.332, 0, 1.29166)
 [node name="Controls" parent="." instance=ExtResource("3_78vxq")]
 script = ExtResource("4_6gve1")
 
+[connection signal="directionVector" from="Controls" to="character1Cotroller" method="_on_controls_direction_vector"]
+
 [editable path="character1Cotroller"]
 [editable path="Controls"]

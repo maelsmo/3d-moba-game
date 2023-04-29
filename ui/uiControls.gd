@@ -1,5 +1,6 @@
 extends CanvasLayer
 
+signal directionVector
 var camguideY 
 var camguideX 
 var joystickIndex = -1
@@ -14,6 +15,8 @@ var rotationVelocityY = 0.0
 var joystickCenter
 var joystickVector 
 var joystickVectorNormalized
+var direction = Vector3.ZERO
+var joystickActive = false
 
 @onready var joystickHandle = $Control/bg/inner
 
@@ -29,6 +32,7 @@ func _unhandled_input(event):
 		if event.pressed:
 			if Input.is_action_just_pressed("joystick_action"):
 				joystickIndex = event.index
+				joystickActive = true
 			elif Input.is_action_just_pressed("attack_action"):
 				attackIndex = event.index
 			elif Input.is_action_just_pressed("s1_action"):
@@ -64,7 +68,12 @@ func _unhandled_input(event):
 
 func _process(delta):
 	$Label.text = str(Engine.get_frames_per_second())
-	
+	if joystickActive:	
+		direction = -(camguideY.transform.basis.z * joystickVectorNormalized.y + camguideY.transform.basis.x * joystickVectorNormalized.x)
+		emit_signal("directionVector", direction)
+	else:
+		emit_signal("directionVector", Vector3.ZERO)
+		
 	rotationVelocityX = lerpf(rotationVelocityX, cameraInput.x * 0.4, delta*10)
 	rotationVelocityY = lerpf(rotationVelocityY, cameraInput.y * 0.15, delta*10)
 	camguideX.rotate_x(deg_to_rad(rotationVelocityY))
